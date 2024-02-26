@@ -1,0 +1,16 @@
+version: '2.19.1'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 7000:7000
+    env_file:
+      - ./.env
+    command: npm run start:dev

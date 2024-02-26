@@ -1,0 +1,14 @@
+version: '2.19.1'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: production 
+
+    ports:
+      - 7000:7000
+
+    env_file:
+      - ./.env
